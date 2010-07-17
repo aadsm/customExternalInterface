@@ -1,0 +1,28 @@
+Custom ExternalInterface
+========================
+
+This library is a proof of concept of the solution proposed by the "Alternative Method for Message Passing Between JavaScript and Flash" paper.
+
+It is currently being used on the Opera Unite "Media Player" Application to make it work on the Wii. This web-application relies on the SoundManager 2 library that was recompiled into a wii capable version using a previous version of this library.
+
+How To Use It
+-------------
+
+In order to make it work with your own Flash-powered web-application you need to follow these, hopefully, simple steps:
+
+1. Comment the "`import flash.external.ExternalInterface;`" line from your *.as and compile it using the `src/ExternalInterface.as` instead.
+2. Copy `swf/MessageProxy.swf` to some folder on your web-application.
+3. Add this bit of configuration to your web-application:    
+`cEIConfig = {
+        proxyUrl: "path/to/MessageProxy.swf",
+        flashId: "flashDomObjectId"
+};`
+
+Technical Information
+---------------------
+
+There are issues with too many messages being passed in a short period of time, the Wii has limited memory that is easy to fill up resulting in an OOM error message.
+
+The Flash object needs to be visible all the time, the Wii has an optimization that stops all Flash objects not visible to the user.
+
+Only one flash object per page is permitted to have this hack.

@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+    <title>custom ExternalInterface Demo</title>
+</head>
+<body>
+    <script>
+        function changeText(str) {
+            var msg = document.getElementById("message");
+            msg.value = str;
+        }
+
+        function setFlashMessage() {
+            var flash = document.getElementById("flash");
+            var msg = document.getElementById("message").value;
+
+            flash.changeText(msg);
+        }
+
+        cEIConfig = {
+            proxyUrl: "../swf/MessageProxy.swf",
+            flashId: "flash"
+        };
+    </script>
+    <h1>custom ExternalInterface Demo</h1>
+    <h4>JavaScript:</h4>
+    <p>
+        <button id="button" onclick="setFlashMessage();">Send Message to Flash!</button>
+        <input type="text" id="message" value="a message">
+    </p>
+    <h4>Flash:</h4>
+    <p>
+        <embed id="flash" type="application/x-shockwave-flash" src="demo.swf" style="width: 200px; height: 100px; border: 1px solid black"></embed>
+    </p>
+</body>
+</html>

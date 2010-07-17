@@ -1,0 +1,1 @@
+mtasc -swf demo.swf -main -header 200:100:30 -cp ../src/ demo.as -version 8
