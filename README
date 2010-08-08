@@ -1,7 +1,7 @@
 Custom ExternalInterface
 ========================
 
-This library is a proof of concept of the solution proposed by the "Alternative Method for Message Passing Between JavaScript and Flash" paper.
+This library is a proof of concept of the solution proposed by the ["Alternative Method for Message Passing Between JavaScript and Flash"](http://www.aadsm.net/papers/messagePassingJavaScriptFlash.pdf) paper.
 
 It is currently being used on the Opera Unite "Media Player" Application to make it work on the Wii. This web-application relies on the SoundManager 2 library that was recompiled into a wii capable version using a previous version of this library.
 
